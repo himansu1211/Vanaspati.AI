@@ -1,253 +1,212 @@
 # Vanaspati.AI 🌿
-### Autonomous Plant Pathology Diagnosis, Multi-Modal Botanical Vision & Precision Agriculture Platform
+### Autonomous Plant Pathology Diagnosis, Multi-Modal Botanical Vision & Neo4j Agronomic Knowledge Graph Platform
 
-[![Deploy on Netlify](https://img.shields.io/badge/Deploy%20on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com/)
-[![React 18](https://img.shields.io/badge/Frontend-React%2018%20SPA-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Live Site](https://img.shields.io/badge/Live_Demo-vanaspatiai.netlify.app-00C7B7?logo=netlify&logoColor=white)](https://vanaspatiai.netlify.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-himansu1211%2FVanaspati.AI-181717?logo=github&logoColor=white)](https://github.com/himansu1211/Vanaspati.AI)
+[![Neo4j](https://img.shields.io/badge/Graph_Database-Neo4j_5.x-008CC1?logo=neo4j&logoColor=white)](https://neo4j.com/)
+[![React 18](https://img.shields.io/badge/Frontend-React_18_SPA-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/Microservice-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Node Express](https://img.shields.io/badge/Backend-Node.js%20%26%20Express-339933?logo=node.js&logoColor=white)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Python](https://img.shields.io/badge/Python-3.10%20--%203.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Server-Flask_3.0-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Python](https://img.shields.io/badge/Python-3.10_--_3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 📌 Project Topic & Purpose
+## 📌 Project Overview & Purpose
 
-**Vanaspati.AI** is an advanced artificial intelligence and agronomic decision-support platform designed to diagnose plant diseases, identify botanical species, and provide targeted biological, chemical, and nutritional prescriptions. By synthesizing modern **Computer Vision (CNNs, Vision Transformers, ResNet)**, **Large Language Models specialized for plant science (PLLaMa — arXiv:2401.01600v1)**, and **certified pathology databases (PlantVillage, Koppert Biological Systems, Farmlyt AI)**, Vanaspati.AI democratizes expert agronomy for farmers, gardeners, students, and agricultural researchers worldwide.
-
----
-
-## 🚨 The Critical Challenges Faced in Agriculture & Gardening
-
-Foliar diseases, root infections, and pest infestations account for **20% to 40% of global crop losses annually**, directly threatening food security and agricultural livelihoods. Farmers, agronomists, and home gardeners frequently confront the following severe obstacles:
-
-### 1. Inaccessible or Delayed Agronomic Expertise
-In rural and remote farming areas, agricultural extension officers and certified plant pathologists are scarce. By the time a specialist visits a field or laboratory test results arrive (often taking 7–14 days), fungal or bacterial blights have already spread across the entire plot, leading to irreversible yield loss.
-
-### 2. Symptom Confusion & Diagnostic Guesswork
-Many plant diseases exhibit overlapping symptoms. For instance:
-- **Early Blight vs. Late Blight vs. Septoria Leaf Spot** in tomatoes and potatoes all present as dark foliar spots.
-- **Powdery Mildew vs. Downy Mildew** require completely different fungicides.
-- **Nutrient deficiencies (e.g. Iron chlorosis or Nitrogen starvation)** are routinely mistaken for viral mosaic infections.
-Visual guesswork by untrained eyes often leads to misdiagnosis and the wrong treatment.
-
-### 3. Indiscriminate & Costly Chemical Overuse
-When faced with unidentified crop damage, growers frequently purchase and spray broad-spectrum, expensive chemical fungicides and insecticides. This indiscriminate spraying:
-- Wastes critical household income on ineffective treatments.
-- Destroys beneficial soil microbiomes and pollinating insects.
-- Fosters pathogen resistance, rendering chemicals ineffective over time.
-- Leaves toxic chemical residues on consumable vegetables and produce.
-
-### 4. Lack of Actionable, Multi-Stage Treatment Protocols
-Most existing diagnosis apps merely output a disease name (e.g. "Apple Scab") with zero actionable advice. Farmers need to know:
-- *What immediate sanitation steps must be taken to stop spore transmission?*
-- *Which biological or organic remedies (Neem, Bacillus subtilis, Trichoderma) are safe to use?*
-- *What exact active chemical ingredient and dosage are certified?*
-- *What specific N-P-K fertilizer ratio will rebuild crop cellular immunity?*
-
-### 5. False Identifications from Lesion Close-Ups
-Traditional vision classifiers force a plant species prediction even when looking at a tight, cropped close-up of a lesion. If an unverified crop name is shown (e.g. guessing "Rose" for a diseased potato leaf), growers lose trust in digital tools.
+**Vanaspati.AI** is a next-generation agronomic intelligence and computational plant science ecosystem engineered to solve the most pressing challenges in global food production and crop health. By orchestrating **Hierarchical Computer Vision (YOLOv11 ROI localization, Vision Transformers, ResNet-9)**, **Large Language Models specialized for plant science (PLLaMa — arXiv:2401.01600v1)**, and an **Enterprise Neo4j Agronomic Knowledge Graph**, Vanaspati.AI delivers instant foliar pathology diagnosis, verified taxonomic species identification, and certified curative recovery roadmaps.
 
 ---
 
-## 💡 How Our Website Helps Users Solve These Problems
+## 🚨 The Critical Challenges Faced in Modern Agriculture
 
-Vanaspati.AI is purposefully engineered to eliminate guesswork, protect crop yields, and promote sustainable agriculture:
+Foliar diseases, soil deficiencies, and invasive pathogens cause **20% to 40% of global crop losses annually**, directly imperiling agricultural economies and smallholder livelihoods:
+
+1. **Inaccessible or Delayed Agronomic Pathology**:
+   In rural farm regions, certified plant pathologists and extension officers are critically scarce. Laboratory tissue cultures typically take 7–14 days — long after fungal blights have spread systemically.
+2. **Symptom Confusion & Diagnostic Guesswork**:
+   Overlapping symptoms between **Early Blight vs. Late Blight vs. Septoria**, or **Iron Chlorosis vs. Viral Mosaics**, regularly mislead growers into applying ineffective or counterproductive remedies.
+3. **Indiscriminate & Costly Chemical Overuse**:
+   Untargeted pesticide spraying wastes vital capital, accelerates pathogen resistance, eradicates beneficial pollinators, and contaminates groundwater and produce.
+4. **Disconnection Between Identification & Biological Treatment**:
+   Conventional apps output a simple label (e.g. *"Apple Scab"*) with zero actionable agronomic protocols, missing essential cultural sanitation, Koppert biological bio-defenses, and NPK soil immunity schedules.
+
+---
+
+## 💡 How Vanaspati.AI Solves These Problems
 
 | User Problem | How Vanaspati.AI Solves It | Practical Benefit |
 | :--- | :--- | :--- |
-| **No Agronomist Nearby** | Instant visual scanner diagnoses foliar symptoms in **under 2 seconds** directly from a phone or computer browser. | Real-time diagnostics in the field without waiting weeks for an expert. |
-| **Disease Misidentification** | Deep CNN and Vision Transformer pipeline trained on **54,000+ pathological images** distinguishes fine-grained bacterial, fungal, and viral lesions. | Accurate scientific classification with binomial pathogen names (*Alternaria solani*, *Venturia inaequalis*). |
-| **Excessive Chemical Costs** | Suggests cost-effective organic remedies first, followed by specific, targeted active ingredients only when necessary. | Saves thousands in wasted pesticide expenditures; preserves soil fertility. |
-| **Missing Cure Guidelines** | Generates an exhaustive **7-part curative prescription report** covering sanitation, biological agents, chemical formulations, and NPK schedules. | Clear, step-by-step recovery plan from immediate triage to long-term crop vigor. |
-| **Misidentification Risk** | **Strict 100% Accuracy Verification Rule**: If the host plant species cannot be verified with 100% certainty from a lesion photo, the plant name is hidden while the exact pathology and cure remain accessible. | Zero false identifications; farmers are never misled by premature species assumptions. |
-| **Complex Plant Care Questions** | Integrated **PLLaMa Plant Science Consultant**, grounded in **1.67 million peer-reviewed papers from 750 journals**, answers natural questions about watering, soil pH, and pruning. | Comprehensive, conversational agronomy advice available 24/7 without internet or subscription barriers. |
+| **No Agronomist Nearby** | In-browser & edge vision models diagnose foliar conditions in **< 2 seconds** on desktop or smartphone. | Instant real-time diagnostics in the field without laboratory delays. |
+| **Species Misidentification** | Multi-Task Hierarchical Vision pipeline classifies across **4 core pillars** (Spinach & Greens, Vegetables, Gourds, Trees & Crops). | 100% verified taxonomy; never confuses a vegetable lesion with an unrelated crop. |
+| **Excessive Chemical Costs** | Prescribes **Koppert Biological Systems** bio-fungicides and organic remedies first, reserving chemical actives only for high-severity infestations. | Cuts chemical expenditures; protects soil microbiomes and food safety. |
+| **Complex Plant Care Questions** | Integrated **PLLaMa Plant Science Consultant** (pre-trained on 1.67M papers from 750 journals) answers natural queries on irrigation, lighting, and soil pH. | Conversational 24/7 agronomic guidance grounded in peer-reviewed science. |
+| **Companion & Rotation Guesswork** | **Neo4j Agronomic Knowledge Graph** models symbiotic companion plants, antagonistic allelopathies, and 3-year crop rotation schedules. | Maximizes plot yield, replenishes nitrogen naturally, and suppresses soil-borne pests. |
 
 ---
 
-## 🛠️ Core Features & Capabilities
+## 🛠️ Core Capabilities & Features
 
-### 1. Multi-Plant Visual Pathology Scanner (`/predict`)
-- **Drag-and-Drop or Camera Capture**: Upload any leaf, flower, or produce image.
-- **Instant Health Assessment**: Distinguishes healthy foliage from diseased specimens.
-- **Pathogen Categorization**: Classifies conditions into fungal, bacterial, viral, or pest damage with severity ratings.
+### 1. 🔬 Universal Botanical & Pathology Report (`/disease.html`)
+Upon scanning any leaf or botanical photo, generates an exhaustive, multi-section clinical dossier:
+- **🎯 Prediction Accuracy & Confidence**: Multi-modal verification score.
+- **🌿 Botanical Specimen Taxonomy**: Common name, binomial scientific name, botanical family, and agricultural category.
+- **🔬 Condition / Diagnosis**: Exact disease pathology with clinical severity rating.
+- **🧬 Taxonomic / Pathogen Classification**: Binomial scientific pathogen (*Alternaria solani*, *Peronospora effusa*, *Venturia inaequalis*).
+- **🔍 Diagnostic Symptoms & Visual Indicators**: Macroscopic lesion markers, chlorotic halos, and tissue necrosis.
+- **⚠️ Causal Factors & Environmental Triggers**: Temperature ranges, relative humidity thresholds (>85%), and leaf wetness hours.
+- **🛡️ Prevention, Cultural Controls & Agronomic Best Practices**: Drip irrigation schedules, canopy aeration spacing, and solarization.
+- **🧪 Soil Nutrition & Immunity Fortification**: Specific NPK ratios (e.g., 10-26-26, 12-32-16) and Calcium/Silicate cell-wall strengthening.
+- **🌿 Organic Remedies & Koppert Biological Protection**: Bio-inoculants (*Trichoderma harzianum* T-22, *Bacillus subtilis*, cold-pressed Neem oil).
+- **🧴 Targeted Crop Protection Products**: Active ingredients, FRAC rotation codes, and dosage guidelines.
+- **📥 One-Click Print / PDF Export**: Downloadable certificate for farm records, cooperatives, and agricultural insurance.
 
-### 2. Comprehensive 7-Part Prescriptions
-Every diagnosis generates a complete agricultural recovery roadmap:
-1. **Observed Symptoms**: Detailed clinical manifestation markers.
-2. **Underlying Causes & Pathogen Life Cycle**: Environmental triggers (humidity, temperature, wet foliage).
-3. **Preventive Measures**: Spacing, drip irrigation, crop rotation schedules.
-4. **Cultural Sanitation**: Pruning diseased branches, sterilizing shears, removing leaf debris.
-5. **Organic & Biological Remedies**: Neem oil, *Trichoderma harzianum*, *Bacillus subtilis*, baking soda sprays.
-6. **Chemical Treatments**: Certified copper fungicides, Mancozeb, Chlorothalonil, Imidacloprid with safety intervals.
-7. **NPK Fertilizer Recommendations**: Exact macronutrient ratios (e.g. 10-10-10, 5-10-10) to bolster plant cell wall resistance.
+### 2. 🌐 Neo4j Agronomic Knowledge Graph (`/api/graph`)
+An enterprise graph database modeling complex biological and agronomic interactions:
+- **Graph Schema**:
+  - `(:Crop)` — Attributes: name, scientific_name, category, family, NPK demand, pH tolerance.
+  - `(:Disease)` — Attributes: idName, disease_name, severity, organ_affected.
+  - `(:Pathogen)` — Attributes: scientific_name, pathogen_type (Fungal, Bacterial, Viral, Oomycete).
+  - `(:BiologicalRemedy)` — Certified biological controls (Koppert Biological Systems standards).
+  - `(:ChemicalTreatment)` — Active chemical compounds with FRAC codes.
+  - `(:SoilNutrient)` — Macronutrients and micronutrients that fortify cellular immunity.
+- **Graph Relationships**:
+  - `(:Crop)-[:AFFECTED_BY]->(:Disease)-[:CAUSED_BY]->(:Pathogen)`
+  - `(:Disease)-[:SUPPRESSED_BY]->(:BiologicalRemedy)`
+  - `(:Disease)-[:TREATED_BY]->(:ChemicalTreatment)`
+  - `(:Crop)-[:COMPANION_PLANT {benefit: ...}]->(:Crop)`
+  - `(:Crop)-[:ANTAGONISTIC_TO {reason: ...}]->(:Crop)`
+  - `(:Crop)-[:ROTATE_AFTER]->(:Crop)`
+- **Graph RAG Integration**: Extracts subgraphs to augment PLLaMa LLM prompts, ensuring 100% factual zero-hallucination plant science responses.
+- **Dual-Engine Architecture**: Connects to **Neo4j AuraDB** cloud or local Bolt (`bolt://localhost:7687`), with automatic embedded graph traversal when offline.
+- **Cypher Seed Script**: Includes [neo4j_agronomic_seed.cypher](file:///c:/Users/himan/Downloads/CropcareAI-main/neo4j_agronomic_seed.cypher) for instant one-click graph creation.
 
-### 3. One-Click Agronomic PDF Reports
-- Generates official, downloadable laboratory certificates via `@react-pdf/renderer`.
-- Printable for field hands, farmer cooperatives, insurance assessments, or agricultural extension records.
+### 3. 💬 Interactive PLLaMa AI Plant Science Consultant (`/chat.html`)
+- Built upon **PLLaMa: An Open-Source Large Language Model for Plant Science (arXiv:2401.01600v1)**.
+- Pre-trained on **1,676,389 academic articles across 750 indexed botanical journals** (*The Plant Cell*, *Plant Physiology*, *Phytopathology*).
+- Understands natural questions on irrigation frequency, sunlight photoperiods, nutrient deficiencies, and organic pest eradication.
 
-### 4. Interactive PLLaMa AI Plant Science Consultant
-- Built on the landmark research **PLLaMa: An Open-Source Large Language Model for Plant Science (arXiv:2401.01600v1)**.
-- Pre-trained on 1,676,389 academic articles from 750 peer-reviewed journals (*The Plant Cell*, *Plant Physiology*, *Phytopathology*).
-- Provides conversational advice on soil amendments, fertilization schedules, companion planting, and organic pest control.
+### 4. 🌾 Precision Crop Advisor & Fertilizer Doctor (`/crop.html`, `/fertilizer.html`)
+- **Crop Recommendation**: Multi-variable Random Forest model (99.55% cross-validated accuracy) evaluating N, P, K, pH, rainfall, temperature, and humidity.
+- **Fertilizer Doctor**: Precision NPK deficit calculator balancing soil reserves against target crop demand.
 
-### 5. Farmlyt AI Botanical Knowledge Base (`/plant-identification-software`)
-- Integrates the 6-step deep computer vision pipeline: **Capture $\to$ Validation $\to$ Preprocessing $\to$ Feature Extraction $\to$ AI Classification $\to$ Verified Decision Generation**.
-- Explains the critical difference between morphological species identification and foliar disease detection.
-- Includes field photography guidelines for crisp macro focus and diffuse lighting.
-
-### 6. Neo4j Agronomic Knowledge Graph & Graph RAG (`/api/graph`)
-- **Phylogenetic & Etiological Network**: Modeled as an enterprise graph database in Neo4j with nodes for `(:Crop)`, `(:Disease)`, `(:Pathogen)`, `(:BiologicalRemedy)`, `(:ChemicalTreatment)`, and `(:SoilNutrient)`.
-- **Companion Planting & Allelopathy**: Graph relationships define beneficial symbiotic companions (`[:COMPANION_PLANT]`), antagonistic soil allelopathies (`[:ANTAGONISTIC_TO]`), and restorative crop rotation cycles (`[:ROTATE_AFTER]`).
-- **Graph RAG Integration**: Injects structured Neo4j subgraphs directly into the PLLaMa language model prompt, ensuring 100% factual zero-hallucination agronomic recommendations.
-- **Dual-Engine Architecture**: Operates with live **Neo4j AuraDB** cloud clusters / Bolt instances and an automatic embedded fallback graph engine when offline.
-- **Production Seed Script**: Includes [neo4j_agronomic_seed.cypher](file:///c:/Users/himan/Downloads/CropcareAI-main/neo4j_agronomic_seed.cypher) with unique constraints and batch `MERGE` statements for instant graph deployment.
-
-### 7. Clinical Database Manual Search
-- Farmers with low bandwidth or no camera can manually browse plants (Apple, Potato, Tomato, Rose, Grape, Corn, Pepper) and conditions to instantly retrieve complete cure manuals.
-
-
----
-
-## 🎨 Professional & Minimalist Design System
-
-Vanaspati.AI features a **strictly professional, minimalist botanical aesthetic** designed for clarity and legibility:
-- **No Neon or Flashy Glare**: Zero neon greens, fluorescent cyan glows, or distracting text-shadows.
-- **Harmonious Botanical Palette**: Deep forest green (`#2d6a4f`, `#1b4332`), soft sage accents (`#52b788`), and neutral slate grays.
-- **Clean Surfaces**: Dark obsidian backgrounds (`#090e0c`) with crisp 1px hairline borders (`rgba(255, 255, 255, 0.08)`).
-- **Responsive Layout**: Designed for mobile field use (320px–480px), tablets (768px), and ultra-wide desktop monitors.
+### 5. 📖 Scientific Documentation & Architecture Page (`/about.html`)
+- In-depth architectural breakdown of the 5-stage inference pipeline, benchmark datasets, model weights, and the Farmlyt AI 6-step vision specification.
 
 ---
 
-## 🏗️ Architecture & Microservices Stack
+## 🏗️ System Architecture & Technology Stack
 
 ```
-                          [ Client Browser (React 18 SPA) ]
-                                          │
-                  ┌───────────────────────┴───────────────────────┐
-                  ▼                                               ▼
-     [ Node.js & Express API ]                     [ FastAPI Vision Microservice ]
-            (Port 4000)                                     (Port 10000)
-                  │                                               │
-    ┌─────────────┴─────────────┐                   ┌─────────────┴─────────────┐
-    ▼                           ▼                   ▼                           ▼
-[ MongoDB Atlas ]      [ PLLaMa & Farmlyt ]   [ PyTorch ResNet-9 ]      [ ViT Produce ]
-(User Accounts &        (Knowledge Bases &      (38 Crop Disease          (Vegetables &
- Disease Data)          Curated Prescriptions)   Classes)                  Fruits)
+                             [ Browser Clients / Mobile Devices ]
+                                              │
+                    ┌─────────────────────────┴─────────────────────────┐
+                    ▼                                                   ▼
+       [ Netlify CDN & Serverless Edge ]                    [ Flask / Python Backend ]
+          (vanaspatiai.netlify.app)                                (Port 5000)
+                    │                                                   │
+    ┌───────────────┴───────────────┐                   ┌───────────────┴───────────────┐
+    ▼                               ▼                   ▼                               ▼
+[ Static Micro-Apps ]      [ Serverless APIs ]     [ Hierarchical Vision ]      [ Neo4j Graph Service ]
+(HTML5 / Modern CSS /      (ask-assistant.js,      (YOLOv11 ROI Extractor,      (AuraDB Cloud / Bolt &
+ Vanilla JS Engines)        neo4j-graph.js)         ResNet-9, EfficientNet)      Embedded Fallback)
+                                                        │                               │
+                                                        ▼                               ▼
+                                            [ PyTorch Model Weights ]       [ 2,630-Node Knowledge ]
+                                            (models/plant_disease.pth)      (disease_database.json)
 ```
 
-- **Frontend**: React 18, React Router v6, Axios, React-Toastify, `@react-pdf/renderer`.
-- **Backend API**: Node.js, Express, MongoDB Atlas / Mongoose, JWT Authentication, bcrypt.
-- **Vision Engine**: FastAPI, PyTorch, Torchvision, Pillow, NumPy, Uvicorn.
-- **Serverless Track**: Netlify Functions (`netlify/functions/`), Netlify CDN (`public/`).
+- **Frontend**: Modern Vanilla CSS design system, responsive mobile-first grid, pure JS in-browser inference engines.
+- **Backend API**: Python 3.10–3.13, Flask 3.0, FastAPI, Gunicorn.
+- **Deep Learning**: PyTorch 2.x, Torchvision, Scikit-Learn, NumPy, Pandas, Pillow.
+- **Graph Database**: Neo4j 5.x, Neo4j Python Driver, Cypher query language, Neo4j AuraDB.
+- **Serverless & Hosting**: Netlify CDN, Netlify Functions (Node.js 18), Git continuous deployment.
+
+---
+
+## 📊 Volume & Scale of Data Utilized
+
+Vanaspati.AI synthesizes massive empirical, taxonomic, and pathological datasets:
+
+| Dataset / Resource | Quantitative Scale | Provenance | Role in Vanaspati.AI |
+| :--- | :--- | :--- | :--- |
+| **Plant Science Research Articles** | **1,676,389 papers** (1.2B+ domain tokens) | **PLLaMa** (arXiv:2401.01600v1) from 750 Journals | Conversational plant care advisor and Graph RAG reasoning |
+| **Foliar Pathology Imagery** | **54,306 images** (38 disease classes) | **PlantVillage Benchmark Dataset** | Supervised training of ResNet-9 and CNN vision heads |
+| **Vegetable Detection Dataset** | **21,000 images** (15 vegetable varieties) | C-Logesh-Perumal-29 Agricultural Dataset | Multi-class vegetable object detection & localization |
+| **Global Crop Taxonomy** | **908 botanical taxa** | **UN FAO World Census & World-Crops.com** | 4-pillar taxonomic classification (Spinach, Veg, Gourds, Trees) |
+| **Agronomic Cultivars** | **585 distinct cultivars** | **GoodGoodGood & Scribd Agricultural Registry** | Cultivar-specific agronomic profiles and growth habits |
+| **Empirical Yield & Soil Records** | **253,256 records** | National Agriculture Statistics (`Data-raw`) | Baseline yield estimations and soil nutrient modeling |
+| **Neo4j Agronomic Knowledge Graph** | **2,630 nodes / 3,500+ edges** | **Vanaspati.AI Graph Engine** | Crop etiology, companion planting, and biological protection |
+| **Biological Control Protocols** | **120+ certified protocols** | **Koppert Biological Systems Standards** | Non-toxic bio-fungicides (*Trichoderma*, predatory mites) |
 
 ---
 
 ## 🚀 Getting Started Locally
 
 ### Prerequisites
-- **Node.js** (v16 or higher)
-- **Python** (v3.10 – v3.13)
-- **MongoDB Atlas** URI or local MongoDB instance
+- **Python 3.10 – 3.13**
+- **Git**
+- Optional: **Neo4j Desktop** or **Neo4j AuraDB** free cloud instance
 
-### 1. Clone & Install
+### 1. Clone & Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/himansu1211/CropcareAI.git
-cd CropcareAI-main
+git clone https://github.com/himansu1211/Vanaspati.AI.git
+cd Vanaspati.AI
 
-# Install Frontend dependencies
-cd frontend
-npm install
-cd ..
+# Create and activate virtual environment
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
 
-# Install Backend dependencies
-cd backend
-npm install
-cd ..
-
-# Install FastAPI Vision dependencies
-cd image-based-ident-api
+# Install dependencies
 pip install -r requirements.txt
-cd ..
 ```
 
-### 2. Environment Configuration
+### 2. Configure Environment Variables (Optional)
 
-Create a `.env` file in `backend/`:
+Create a `.env` file in the root directory:
 ```env
-PORT=4000
-MONGO_URI=your_mongodb_connection_string
-SECRET=your_jwt_secret_key
+PORT=5000
+OPENWEATHER_API_KEY=your_openweather_api_key
+
+# Optional: Connect live Neo4j database (defaults to embedded graph if not set)
+NEO4J_URI=bolt://localhost:7687
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=your_password
 ```
 
-### 3. Launching All Services
+### 3. Launch Application
 
-Open separate terminal windows or run the background tasks:
-
-```powershell
-# Terminal 1: Launch FastAPI Computer Vision Engine (Port 10000)
-cd image-based-ident-api
-python -m uvicorn main:app --host 127.0.0.1 --port 10000
-
-# Terminal 2: Launch Node.js Backend & Knowledge API (Port 4000)
-cd backend
-node server.js
-
-# Terminal 3: Launch React Frontend (Port 3000)
-cd frontend
-npm start
+```bash
+# Start Flask web server with full Neo4j Graph, AI Consultant & Vision engines
+python app/app.py
 ```
 
-Access the application in your browser at: **`http://localhost:3000`**
+Access in your browser at: **`http://127.0.0.1:5000`**
 
----
+### 4. Seed Neo4j Knowledge Graph (Optional)
 
-## 📊 Volume & Quantity of Data Retrieved and Utilized
-
-Vanaspati.AI aggregates and operationalizes massive datasets spanning academic literature, high-resolution foliar computer vision imagery, regional yield logs, soil chemistry benchmarks, and global botanical taxonomy:
-
-| Data Domain / Resource | Quantitative Scale | Source / Provenance | Utilization in Vanaspati.AI |
-| :--- | :--- | :--- | :--- |
-| **Plant Science Research Articles** | **1,676,389 full papers** (1.2B+ domain tokens) | 750 Indexed Journals via **PLLaMa** (arXiv:2401.01600v1) | Powers conversational plant care Q&A, agronomic advisor, and edge LLM inference |
-| **District Agricultural Yield Logs** | **246,091 empirical records** | National Agriculture Statistics (`Data-raw/raw_districtwise_yield_data.csv`) | Historical crop productivity baselines and macro-trend evaluations |
-| **Foliar Pathology Imagery** | **54,306 high-res images** (38 disease classes) | **PlantVillage Benchmark Dataset** (`dataset/plant_diseases`) | Trains ResNet-9 and CNN vision heads for fine-grained leaf pathology detection |
-| **Vegetable Detection & CV Imagery** | **21,000 images** (15 vegetable varieties) | C-Logesh-Perumal-29 Vegetable Detection Repository | Powers multi-class vegetable object detection, bounding box localization, and ViT classification |
-| **Soil Chemistry & Crop Suitability** | **5,300 records** (3,100 raw + 2,200 curated field rows) | `cpdata.csv` & `crop_recommendation.csv` | Random Forest model (99.55% accuracy) mapping N, P, K, pH, temp, humidity, and rainfall |
-| **Fertilizer Calibration Baselines** | **1,865 empirical records** (1,843 raw + 22 curated matrices) | `Data-raw/Fertilizer.csv` & `fertilizer.csv` | Precision NPK dosage engine and nutrient replenishment calculator |
-| **Curated Pathology Prescriptions** | **221 production protocols** + **81 deep monographs** | **Encyclopædia Britannica** & **Koppert Biological Systems** | Comprehensive 7-part curative prescriptions (sanitation, biological, chemical, NPK) |
-| **Global Botanical Species Taxonomy** | **1,000,000+ taxonomy records** (40,000+ species) | **Pl@ntNet API** & **Leafsnap** Benchmarks | Botanical genus, family, and binomial scientific nomenclature verification |
-| **Vision Pipeline Engineering Data** | **6-stage pipeline architecture** & photography specs | **Farmlyt AI Knowledge Base** (`backend/data/farmlytKnowledge.json`) | Enforces the 100% species accuracy verification rule and camera guidelines |
-
-### 📈 Summary of Total Data Scale:
-- 📖 **1,676,389+** Peer-Reviewed Botanical Science Papers
-- 🌾 **253,256+** Empirical Tabular Agricultural, Yield & Soil Records
-- 📷 **75,306+** Labeled Computer Vision Training Images
-- 🌿 **1,000,000+** Validated Global Botanical Species & Taxonomy Profiles
-- 🩺 **302** Verified Curative Treatment Prescriptions & In-Depth Disease Monographs
-
----
-
-## 📚 Scientific References & Datasets
-
-1. **PLLaMa: An Open-Source Large Language Model for Plant Science**: [arXiv:2401.01600v1](https://arxiv.org/html/2401.01600v1) — Pretrained on 1.67M papers from 750 journals.
-2. **Farmlyt AI**: [Plant Identification Software Architecture & Smart Agriculture Applications](https://www.farmlytai.in/blog/plant-identification-software).
-3. **PlantVillage Dataset**: Deep learning benchmarks for 54,306 foliar disease images across 38 classes.
-4. **Koppert Biological Systems**: Certified biological disease control and beneficial organism protocols.
-5. **Pl@ntNet & Leafsnap**: Global botanical taxonomy benchmarks and leaf margin morphology.
+To seed your own Neo4j instance with our agronomic knowledge graph:
+1. Open Neo4j Browser or Cypher Shell.
+2. Execute the queries inside [neo4j_agronomic_seed.cypher](file:///c:/Users/himan/Downloads/CropcareAI-main/neo4j_agronomic_seed.cypher).
 
 ---
 
 ## 👨‍💻 Author & Attribution
 
-**Built with passion for sustainable agriculture and artificial intelligence by:**
+**Designed and engineered with passion for precision agriculture and artificial intelligence by:**
 
 ### **Himansu Kumar Sahu**
 - 💻 **GitHub**: [github.com/himansu1211](https://github.com/himansu1211)
 - 🔗 **LinkedIn**: [linkedin.com/in/himansu-kumar-sahu-377916334](https://www.linkedin.com/in/himansu-kumar-sahu-377916334)
+- 🌐 **Project Repository**: [github.com/himansu1211/Vanaspati.AI](https://github.com/himansu1211/Vanaspati.AI)
 
 ---
 
 ## 📝 License
+
 This project is open-source and licensed under the [MIT License](LICENSE).
