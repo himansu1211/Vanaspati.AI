@@ -1,0 +1,13 @@
+crop,N_opt,P_opt,K_opt,temp_min,temp_max,ph_opt,water_req,season
+rice,80,40,40,20,35,6.0,High,Kharif
+wheat,100,50,40,15,25,6.5,Medium,Rabi
+maize,80,40,20,18,30,6.2,Medium,Kharif/Rabi
+chickpea,40,60,80,15,28,7.0,Low,Rabi
+cotton,120,40,20,21,35,6.5,High,Kharif
+sugarcane,150,60,60,20,38,6.8,Very High,Annual
+tomato,100,50,50,18,29,6.3,Medium,All-season
+potato,120,80,100,15,22,5.5,Medium,Rabi
+banana,100,75,50,22,35,6.5,High,Perennial
+apple,20,125,200,10,24,6.0,Medium,Temperate
+grapes,20,125,200,15,35,6.5,Low,Perennial
+coffee,100,20,30,18,28,5.8,High,Perennial

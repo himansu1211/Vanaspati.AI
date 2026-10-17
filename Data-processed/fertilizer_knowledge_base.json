@@ -1,0 +1,13 @@
+{
+  "NPK_Ratios": {
+    "Cereals": "4:2:1",
+    "Pulses": "1:2:2",
+    "Oilseeds": "3:2:1",
+    "Cash_Crops": "2:1:1"
+  },
+  "Soil_Amendments": {
+    "Acidic_Soil (pH < 5.5)": "Apply Agricultural Lime (Calcium Carbonate) or Dolomite at 2-4 tons/ha",
+    "Alkaline_Soil (pH > 7.8)": "Apply Gypsum (Calcium Sulfate) or Elemental Sulfur at 1-2 tons/ha",
+    "Organic_Carbon_Depleted": "Apply Farm Yard Manure (FYM) or Vermicompost at 5-10 tons/ha"
+  }
+}
