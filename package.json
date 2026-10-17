@@ -1,0 +1,36 @@
+{
+  "name": "vanaspati-ai",
+  "version": "2.0.0",
+  "description": "Vanaspati.AI - Next-Generation AI Plant Disease Identification, Multi-Task Computer Vision & Agricultural Intelligence Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-frontend": "cd ./frontend && npm start",
+    "start-backend": "cd ./backend && npm run dev",
+    "start-api": "cd ./image-based-ident-api && python3.13 -m uvicorn main:app --host 127.0.0.1 --port 10000 --reload",
+    "start-flask": "python app/app.py",
+    "start-project": "npm run start-frontend",
+    "build-frontend": "cd ./frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanaspati-ai/vanaspati-ai.git"
+  },
+  "keywords": [
+    "vanaspati-ai",
+    "plant-disease",
+    "deep-learning",
+    "computer-vision",
+    "fastapi",
+    "react",
+    "express",
+    "mongodb",
+    "pytorch",
+    "tensorflow"
+  ],
+  "author": "Himansu Kumar Sahu",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  }
+}

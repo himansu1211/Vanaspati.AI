@@ -1,0 +1,79 @@
+# ==============================================================================
+# Vanaspati.AI - Netlify Deployment Configuration
+# Configures static site hosting on Netlify CDN and serverless API functions.
+# ==============================================================================
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# Environment Variables (Optional override in Netlify Dashboard)
+[build.environment]
+  NODE_VERSION = "18"
+
+# API Redirects to Netlify Serverless Functions
+[[redirects]]
+  from = "/api/crop-recommend"
+  to = "/.netlify/functions/crop-recommend"
+  status = 200
+
+[[redirects]]
+  from = "/api/fertilizer-suggest"
+  to = "/.netlify/functions/fertilizer-suggest"
+  status = 200
+
+[[redirects]]
+  from = "/api/multitask-vision"
+  to = "/.netlify/functions/multitask-vision"
+  status = 200
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health"
+  status = 200
+
+# Clean URL Routing
+[[redirects]]
+  from = "/crop"
+  to = "/crop.html"
+  status = 200
+
+[[redirects]]
+  from = "/fertilizer"
+  to = "/fertilizer.html"
+  status = 200
+
+[[redirects]]
+  from = "/disease"
+  to = "/disease.html"
+  status = 200
+
+[[redirects]]
+  from = "/vision"
+  to = "/disease.html"
+  status = 200
+
+# Security and Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/scripts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
