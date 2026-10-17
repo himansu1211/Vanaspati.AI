@@ -1,23 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#1aac83" />
-    <meta
-      name="description"
-      content="Vanaspati.AI - Next-Generation AI Plant Disease Identification, Species Recognition & Agricultural Intelligence Platform"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <title>Vanaspati.AI - Intelligent Plant Disease Diagnostic System</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run Vanaspati.AI.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vanaspati.AI 2.0 - Multi-Purpose Computer Vision & Agricultural Intelligence</title>
+  
+  <meta name="description" content="AI platform delivering precision crop recommendations, fertilizer suggestions, and multi-purpose computer vision for plant species, vegetables, spinach types, trees, and leaf diseases.">
+  <meta name="theme-color" content="#091a13">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="vanaspati-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper" aria-label="Vanaspati.AI Home">
+        <div class="brand-icon-box">🌱</div>
+        <div class="brand-text">
+          <span class="brand-name">Vanaspati<span>AI</span></span>
+          <span class="brand-tagline">Multi-Purpose Vision & Agronomy</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-desktop">
+          <li><a href="index.html" class="nav-link-item active"><span>🏠</span> Home</a></li>
+          <li><a href="crop.html" class="nav-link-item"><span>🌾</span> Crop Advisor</a></li>
+          <li><a href="fertilizer.html" class="nav-link-item"><span>🧪</span> Fertilizer Doctor</a></li>
+          <li><a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision</a></li>
+          <li><a href="chat.html" class="nav-link-item"><span>💬</span> AI Consultant</a></li>
+          <li><a href="about.html" class="nav-link-item"><span>📖</span> About</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle Menu">☰</button>
+    </div>
+
+    <div class="nav-mobile-drawer" id="navMobileDrawer">
+      <a href="index.html" class="nav-link-item active"><span>🏠</span> Home</a>
+      <a href="crop.html" class="nav-link-item"><span>🌾</span> Crop Recommendation</a>
+      <a href="fertilizer.html" class="nav-link-item"><span>🧪</span> Fertilizer Suggestion</a>
+      <a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision Scanner</a>
+      <a href="chat.html" class="nav-link-item"><span>💬</span> AI Plant Consultant</a>
+      <a href="about.html" class="nav-link-item"><span>📖</span> About Vanaspati.AI</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="main-wrapper">
+    <section class="hero-section">
+      <div class="hero-glow-orb hero-glow-1"></div>
+      <div class="hero-glow-orb hero-glow-2"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🌿</span> Multi-Task Computer Vision & Agricultural Intelligence
+        </div>
+
+        <h1 class="hero-title">
+          Plant Species, Tree Profiles &<br>
+          <span class="gradient-text">Precision Disease Diagnostics.</span>
+        </h1>
+
+        <p class="hero-description">
+          A hierarchical deep learning pipeline that unifies object localization (YOLOv11),
+          broad species classification across <strong>Vegetables, Spinach types, Fruit/Forest Trees, and Crops</strong>,
+          and fine-grained leaf pathology expert heads.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="disease.html" class="btn-vanaspati btn-secondary-agro" style="background: var(--forest-card); color: #fff;">
+            <span>🔬</span> Launch Multi-Task Vision Scanner
+          </a>
+          <a href="crop.html" class="btn-vanaspati btn-primary-agro">
+            <span>🌾</span> Recommend Ideal Crop
+          </a>
+          <a href="fertilizer.html" class="btn-vanaspati btn-amber-agro">
+            <span>🧪</span> Balance Fertilizer
+          </a>
+        </div>
+
+        <div class="hero-stats-bar">
+          <div class="stat-item">
+            <div class="stat-number">99.5<span>%</span></div>
+            <div class="stat-label">Model Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4<span> Pillars</span></div>
+            <div class="stat-label">Vegetables, Spinach, Trees, Crops</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">38</div>
+            <div class="stat-label">Disease Pathologies</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Netlify</div>
+            <div class="stat-label">Global Edge Deployable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hierarchical Pipeline Architecture Diagram -->
+    <section class="content-container">
+      <div class="section-header">
+        <span class="section-tag">System Architecture</span>
+        <h2 class="section-title">Hierarchical Deep Learning Framework</h2>
+        <p class="section-subtitle">
+          Instead of building one massive model with unstructured classes, Vanaspati.AI uses a 3-step hierarchical multi-task routing pipeline.
+        </p>
+      </div>
+
+      <div class="diagnostic-grid" style="margin-bottom: 3.5rem;">
+        <div class="diag-stat-card" style="border-top: 4px solid var(--mint-glow);">
+          <div class="diag-stat-icon">🎯</div>
+          <div class="diag-stat-label">Step 1: Localization</div>
+          <div class="diag-stat-value" style="font-size: 1.2rem; margin-top: 0.35rem;">YOLOv11 Leaf Detection</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Detects and crops the leaf, plant, or tree ROI from complex outdoor background noise, soil, and glare.
+          </p>
+        </div>
+
+        <div class="diag-stat-card" style="border-top: 4px solid var(--emerald-500);">
+          <div class="diag-stat-icon">🌿</div>
+          <div class="diag-stat-label">Step 2: Species Category</div>
+          <div class="diag-stat-value" style="font-size: 1.2rem; margin-top: 0.35rem;">Multi-Task Backbone</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            EfficientNet-B2 / Vision Transformer classifies species: <em>Spinach & Leafy Greens, Vegetables, Trees, and Crops</em>.
+          </p>
+        </div>
+
+        <div class="diag-stat-card" style="border-top: 4px solid var(--harvest-gold);">
+          <div class="diag-stat-icon">🩺</div>
+          <div class="diag-stat-label">Step 3: Disease Expert</div>
+          <div class="diag-stat-value" style="font-size: 1.2rem; margin-top: 0.35rem;">Specialized Heads</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Routes cropped ROI to family-specific expert heads trained to identify subtle pathogen lesions or confirm healthy foliage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Services Cards -->
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon-wrapper icon-disease">🔬</div>
+          <h3 class="service-title">Multi-Task Vision Scanner</h3>
+          <p class="service-desc">
+            Upload leaf or plant imagery across Spinach, Vegetables, Fruit Trees, or Crops. Receive instant localization, species identification, and curative pathology advice.
+          </p>
+          <div class="service-meta-tags">
+            <span class="meta-pill">YOLOv11 ROI</span>
+            <span class="meta-pill">EfficientNet-B2</span>
+            <span class="meta-pill">ResNet-9 Heads</span>
+          </div>
+          <a href="disease.html" class="btn-vanaspati btn-secondary-agro service-btn" style="background: var(--forest-card); color: #fff;">
+            Launch Vision Scanner &rarr;
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrapper icon-crop">🌾</div>
+          <h3 class="service-title">Crop Recommendation</h3>
+          <p class="service-desc">
+            Input soil Nitrogen, Phosphorus, Potassium, pH, rainfall, and location. Our 99.5% accurate model predicts the most profitable crop.
+          </p>
+          <div class="service-meta-tags">
+            <span class="meta-pill">Random Forest</span>
+            <span class="meta-pill">22 Crops</span>
+            <span class="meta-pill">In-Browser Scoring</span>
+          </div>
+          <a href="crop.html" class="btn-vanaspati btn-primary-agro service-btn">
+            Recommend Crops &rarr;
+          </a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrapper icon-fertilizer">🧪</div>
+          <h3 class="service-title">Fertilizer Doctor</h3>
+          <p class="service-desc">
+            Balance soil chemistry with tailored organic amendments and commercial NPK ratios to maximize yield while preventing fertilizer burn.
+          </p>
+          <div class="service-meta-tags">
+            <span class="meta-pill">NPK Analysis</span>
+            <span class="meta-pill">Organic Compost</span>
+            <span class="meta-pill">Soil Nutrition</span>
+          </div>
+          <a href="fertilizer.html" class="btn-vanaspati btn-amber-agro service-btn">
+            Diagnose Fertilizer &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vanaspati-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Vanaspati<span>AI</span> 2.0</h3>
+        <p>Next-generation multi-purpose vision and environmental intelligence platform deployable on Netlify.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul class="footer-links">
+          <li><a href="disease.html">🔬 Multi-Task Vision</a></li>
+          <li><a href="crop.html">🌾 Crop Advisor</a></li>
+          <li><a href="fertilizer.html">🧪 Fertilizer Doctor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Datasets</h4>
+        <ul class="footer-links">
+          <li><a href="#!">PlantVillage (54,000+ images)</a></li>
+          <li><a href="#!">Kaggle Vegetable Dataset</a></li>
+          <li><a href="#!">Leafsnap & PlantCLEF</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Vanaspati.AI Platform. Ready for Netlify Global Deployment.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js?v=2026.10.17.9"></script>
+</body>
 </html>

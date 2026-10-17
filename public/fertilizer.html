@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vanaspati.AI - Fertilizer Doctor</title>
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header class="vanaspati-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-icon-box">🌱</div>
+        <div class="brand-text">
+          <span class="brand-name">Vanaspati<span>AI</span></span>
+          <span class="brand-tagline">Fertilizer Doctor</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-desktop">
+          <li><a href="index.html" class="nav-link-item"><span>🏠</span> Home</a></li>
+          <li><a href="crop.html" class="nav-link-item"><span>🌾</span> Crop Advisor</a></li>
+          <li><a href="fertilizer.html" class="nav-link-item active"><span>🧪</span> Fertilizer Doctor</a></li>
+          <li><a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision</a></li>
+          <li><a href="chat.html" class="nav-link-item"><span>💬</span> AI Consultant</a></li>
+          <li><a href="about.html" class="nav-link-item"><span>📖</span> About</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-mobile-toggle" id="navMobileToggle">☰</button>
+    </div>
+
+    <div class="nav-mobile-drawer" id="navMobileDrawer">
+      <a href="index.html" class="nav-link-item"><span>🏠</span> Home</a>
+      <a href="crop.html" class="nav-link-item"><span>🌾</span> Crop Recommendation</a>
+      <a href="fertilizer.html" class="nav-link-item active"><span>🧪</span> Fertilizer Suggestion</a>
+      <a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision Scanner</a>
+      <a href="chat.html" class="nav-link-item"><span>💬</span> AI Plant Consultant</a>
+      <a href="about.html" class="nav-link-item"><span>📖</span> About Vanaspati.AI</a>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <div class="content-container">
+      <div class="form-studio-wrapper">
+        <div class="form-card">
+          <div class="form-header-area">
+            <div class="form-title-group">
+              <h2>🧪 Fertilizer Advisory Doctor</h2>
+              <p>Analyze your soil's NPK ratio against standard crop agronomic requirements to balance your soil chemistry.</p>
+            </div>
+            <button type="button" class="btn-sm-sample" id="btnQuickFillFert">
+              ✨ Quick Fill Sample
+            </button>
+          </div>
+
+          <form id="staticFertForm">
+            <div class="form-grid-2col">
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Nitrogen" class="field-label"><span>🌱</span> Soil Nitrogen (N)</label>
+                  <span class="field-hint-badge">0 – 140 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Nitrogen" placeholder="e.g. 50" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Phosphorous" class="field-label"><span>⚡</span> Soil Phosphorous (P)</label>
+                  <span class="field-hint-badge">5 – 145 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Phosphorous" placeholder="e.g. 40" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Pottasium" class="field-label"><span>🛡️</span> Soil Potassium (K)</label>
+                  <span class="field-hint-badge">5 – 205 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Pottasium" placeholder="e.g. 45" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="crop" class="field-label"><span>🌾</span> Target Crop</label>
+                  <span class="field-hint-badge">22 Crops</span>
+                </div>
+                <div class="input-container select-wrapper">
+                  <span class="input-icon-left">🌱</span>
+                  <select name="cropname" class="form-control-agro" id="crop" required>
+                    <option value="" disabled selected>Select crop</option>
+                    <option value="rice">Rice (Paddy)</option>
+                    <option value="maize">Maize (Corn)</option>
+                    <option value="chickpea">Chickpea (Gram)</option>
+                    <option value="kidneybeans">Kidney Beans (Rajma)</option>
+                    <option value="banana">Banana</option>
+                    <option value="mango">Mango</option>
+                    <option value="grapes">Grapes</option>
+                    <option value="apple">Apple</option>
+                    <option value="cotton">Cotton</option>
+                    <option value="coffee">Coffee</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-vanaspati btn-amber-agro btn-form-submit">
+                <span>🧪</span> Diagnose & Recommend Fertilizer
+              </button>
+            </div>
+          </form>
+
+          <div id="clientResultDisplay"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="vanaspati-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Vanaspati<span>AI</span> 2.0</h3>
+        <p>Scientific agricultural soil optimization ready for Netlify.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Vanaspati.AI Platform. Ready for Netlify Deployment.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js?v=2026.10.17.9"></script>
+</body>
+</html>

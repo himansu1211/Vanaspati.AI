@@ -1,2 +1,13 @@
-/backend/node_modules
+node_modules/
+backend/node_modules/
+frontend/node_modules/
 /backend/env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+scratch/
+.DS_Store
+Thumbs.db

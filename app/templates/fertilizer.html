@@ -1,0 +1,144 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="form-studio-wrapper">
+    <div class="form-card">
+      <div class="form-header-area">
+        <div class="form-title-group">
+          <h2>🧪 Fertilizer Advisory Doctor</h2>
+          <p>Analyze your soil's NPK nutrient ratio against standard crop agronomic requirements to balance your soil chemistry.</p>
+        </div>
+        <button type="button" class="btn-sm-sample" id="btnQuickFillFert" title="Fill sample soil values for quick testing">
+          ✨ Quick Fill Sample
+        </button>
+      </div>
+
+      <form method="POST" action="{{ url_for('fert_recommend') }}">
+        <div class="form-grid-2col">
+          <!-- Nitrogen -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Nitrogen" class="field-label">
+                <span>🌱</span> Soil Nitrogen (N)
+              </label>
+              <span class="field-hint-badge">0 – 140 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Nitrogen"
+                name="nitrogen"
+                placeholder="Enter N value (e.g. 50)"
+                min="0"
+                max="300"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Phosphorous -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Phosphorous" class="field-label">
+                <span>⚡</span> Soil Phosphorous (P)
+              </label>
+              <span class="field-hint-badge">5 – 145 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Phosphorous"
+                name="phosphorous"
+                placeholder="Enter P value (e.g. 40)"
+                min="0"
+                max="300"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Potassium -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Pottasium" class="field-label">
+                <span>🛡️</span> Soil Potassium (K)
+              </label>
+              <span class="field-hint-badge">5 – 205 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Pottasium"
+                name="pottasium"
+                placeholder="Enter K value (e.g. 45)"
+                min="0"
+                max="350"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Target Crop -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="crop" class="field-label">
+                <span>🌾</span> Crop You Want to Grow
+              </label>
+              <span class="field-hint-badge">22 Crops Supported</span>
+            </div>
+            <div class="input-container select-wrapper">
+              <span class="input-icon-left">🌱</span>
+              <select
+                name="cropname"
+                class="form-control-agro"
+                id="crop"
+                required
+              >
+                <option value="" disabled selected>Select target crop</option>
+                <option value="rice">Rice (Paddy)</option>
+                <option value="maize">Maize (Corn)</option>
+                <option value="chickpea">Chickpea (Gram)</option>
+                <option value="kidneybeans">Kidney Beans (Rajma)</option>
+                <option value="pigeonpeas">Pigeonpeas (Arhar / Tur)</option>
+                <option value="mothbeans">Mothbeans</option>
+                <option value="mungbean">Mungbean (Moong)</option>
+                <option value="blackgram">Blackgram (Urad)</option>
+                <option value="lentil">Lentil (Masoor)</option>
+                <option value="pomegranate">Pomegranate</option>
+                <option value="banana">Banana</option>
+                <option value="mango">Mango</option>
+                <option value="grapes">Grapes</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="muskmelon">Muskmelon</option>
+                <option value="apple">Apple</option>
+                <option value="orange">Orange</option>
+                <option value="papaya">Papaya</option>
+                <option value="coconut">Coconut</option>
+                <option value="cotton">Cotton</option>
+                <option value="jute">Jute</option>
+                <option value="coffee">Coffee</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-vanaspati btn-amber-agro btn-form-submit">
+            <span>🧪</span> Diagnose & Recommend Fertilizer
+          </button>
+          <span class="form-privacy-note">
+            Calculated against ICAR soil fertility standards to avoid chemical burn and groundwater runoff.
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

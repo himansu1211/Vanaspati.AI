@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vanaspati.AI - Crop Recommendation Studio</title>
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="scripts/cities.js"></script>
+</head>
+
+<body>
+  <header class="vanaspati-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-icon-box">🌱</div>
+        <div class="brand-text">
+          <span class="brand-name">Vanaspati<span>AI</span></span>
+          <span class="brand-tagline">Crop Suitability Studio</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-desktop">
+          <li><a href="index.html" class="nav-link-item"><span>🏠</span> Home</a></li>
+          <li><a href="crop.html" class="nav-link-item active"><span>🌾</span> Crop Advisor</a></li>
+          <li><a href="fertilizer.html" class="nav-link-item"><span>🧪</span> Fertilizer Doctor</a></li>
+          <li><a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision</a></li>
+          <li><a href="chat.html" class="nav-link-item"><span>💬</span> AI Consultant</a></li>
+          <li><a href="about.html" class="nav-link-item"><span>📖</span> About</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-mobile-toggle" id="navMobileToggle">☰</button>
+    </div>
+
+    <div class="nav-mobile-drawer" id="navMobileDrawer">
+      <a href="index.html" class="nav-link-item"><span>🏠</span> Home</a>
+      <a href="crop.html" class="nav-link-item active"><span>🌾</span> Crop Recommendation</a>
+      <a href="fertilizer.html" class="nav-link-item"><span>🧪</span> Fertilizer Suggestion</a>
+      <a href="disease.html" class="nav-link-item"><span>🔬</span> Multi-Task Vision Scanner</a>
+      <a href="chat.html" class="nav-link-item"><span>💬</span> AI Plant Consultant</a>
+      <a href="about.html" class="nav-link-item"><span>📖</span> About Vanaspati.AI</a>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <div class="content-container">
+      <div class="form-studio-wrapper">
+        <div class="form-card">
+          <div class="form-header-area">
+            <div class="form-title-group">
+              <h2>🌾 Crop Recommendation Studio</h2>
+              <p>Predict the optimal, highest-yielding crop for your soil and climate profile.</p>
+            </div>
+            <button type="button" class="btn-sm-sample" id="btnQuickFillCrop">
+              ✨ Quick Fill Sample
+            </button>
+          </div>
+
+          <form id="staticCropForm">
+            <div class="form-grid-2col">
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Nitrogen" class="field-label"><span>🌱</span> Nitrogen (N)</label>
+                  <span class="field-hint-badge">0 – 140 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Nitrogen" placeholder="e.g. 90" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Phosphorous" class="field-label"><span>⚡</span> Phosphorous (P)</label>
+                  <span class="field-hint-badge">5 – 145 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Phosphorous" placeholder="e.g. 42" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Pottasium" class="field-label"><span>🛡️</span> Potassium (K)</label>
+                  <span class="field-hint-badge">5 – 205 mg/kg</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">🧪</span>
+                  <input type="number" class="form-control-agro" id="Pottasium" placeholder="e.g. 43" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="ph" class="field-label"><span>⚖️</span> Soil pH Level</label>
+                  <span class="field-hint-badge">3.5 – 9.0</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">📊</span>
+                  <input type="number" step="0.01" class="form-control-agro" id="ph" placeholder="e.g. 6.5" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="Rainfall" class="field-label"><span>🌧️</span> Annual Rainfall</label>
+                  <span class="field-hint-badge">in mm</span>
+                </div>
+                <div class="input-container">
+                  <span class="input-icon-left">💧</span>
+                  <input type="number" step="0.1" class="form-control-agro" id="Rainfall" placeholder="e.g. 202.9" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="form-label-row">
+                  <label for="sts" class="field-label"><span>📍</span> State</label>
+                  <span class="field-hint-badge">India</span>
+                </div>
+                <div class="input-container select-wrapper">
+                  <span class="input-icon-left">🗺️</span>
+                  <select onchange="print_city('state', this.selectedIndex);" id="sts" class="form-control-agro" required></select>
+                </div>
+              </div>
+
+              <div class="form-field form-group-full">
+                <div class="form-label-row">
+                  <label for="state" class="field-label"><span>🏙️</span> City / District</label>
+                  <span class="field-hint-badge">Weather Sync</span>
+                </div>
+                <div class="input-container select-wrapper">
+                  <span class="input-icon-left">🌤️</span>
+                  <select id="state" class="form-control-agro" required></select>
+                </div>
+              </div>
+            </div>
+
+            <script type="text/javascript">
+              print_state("sts");
+            </script>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-vanaspati btn-primary-agro btn-form-submit">
+                <span>✨</span> Calculate Recommended Crop
+              </button>
+            </div>
+          </form>
+
+          <div id="clientResultDisplay"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="vanaspati-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Vanaspati<span>AI</span> 2.0</h3>
+        <p>Precision agricultural decision support deployable on Netlify.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Vanaspati.AI Platform. Ready for Netlify Deployment.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js?v=2026.10.17.9"></script>
+</body>
+</html>

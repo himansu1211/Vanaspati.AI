@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="result-wrapper">
+    <div class="result-card">
+      <div class="result-card-banner">
+        <div class="result-badge badge-success">
+          <span>🔬</span> Universal Botanical & Pathology Report
+        </div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 0.5rem; color: var(--text-primary);">
+          Plant & Vegetable Pathology Diagnosis
+        </h2>
+        <p class="result-subhead">
+          Our multi-modal Vision Transformer (ViT), YOLO, and ResNet-9 deep learning pipeline has analyzed the specimen morphology, cellular leaf pattern, and disease epidemiology:
+        </p>
+      </div>
+
+      <!-- Disease Analysis & Cure Text -->
+      <div class="result-content-box" style="border-left: 4px solid var(--emerald-600); background: #f0fdf4; margin-bottom: 1.5rem;">
+        {% if confidence %}
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--forest-surface, #e8f5e9); padding: 0.4rem 0.85rem; border-radius: 9999px; margin-bottom: 1rem; border: 1px solid var(--emerald-600); font-weight: 600; color: #1b5e20;">
+          <span>🎯</span> Prediction Accuracy & Confidence: {{ (confidence * 100) | round(2) }}% (Multi-Modal Verified)
+        </div>
+        {% endif %}
+        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-primary);">
+          {{ prediction|safe }}
+        </div>
+      </div>
+
+      <!-- Action Protocol Cards -->
+      <div class="diagnostic-grid">
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">✂️</div>
+          <div class="diag-stat-label">Sanitation</div>
+          <div class="diag-stat-value" style="font-size: 1.05rem;">Prune Necrotic Foliage</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">💨</div>
+          <div class="diag-stat-label">Aeration</div>
+          <div class="diag-stat-value" style="font-size: 1.05rem;">Optimize Plant Spacing</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">🧴</div>
+          <div class="diag-stat-label">Biological Protection</div>
+          <div class="diag-stat-value" style="font-size: 1.05rem;">Koppert / Bio-fungicide</div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="result-actions-row">
+        <button type="button" onclick="window.print();" class="btn-vanaspati btn-primary-agro" style="cursor: pointer;">
+          <span>📥</span> Download / Print Full Report
+        </button>
+        <a href="{{ url_for('chat_view') }}" class="btn-vanaspati btn-primary-agro" style="background: #0284c7; border-color: #0284c7; color: #fff;">
+          <span>💬</span> Ask AI Plant Consultant
+        </a>
+        <a href="{{ url_for('disease_prediction') }}" class="btn-vanaspati btn-secondary-agro" style="background: var(--forest-card); color: #fff;">
+          <span>🔬</span> Scan Another Specimen
+        </a>
+        <a href="{{ url_for('fertilizer_recommendation') }}" class="btn-vanaspati btn-amber-agro">
+          <span>🧪</span> Boost Soil Immunity
+        </a>
+        <a href="{{ url_for('home') }}" class="btn-vanaspati btn-outline-agro">
+          <span>🏠</span> Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

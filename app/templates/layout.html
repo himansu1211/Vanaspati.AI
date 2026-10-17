@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ title or 'Vanaspati.AI - Intelligent Agricultural Advisor' }}</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="AI-driven agricultural advisory platform delivering precision crop recommendations, soil fertilizer optimization, and plant disease detection for maximum farming yield.">
+  <meta name="keywords" content="Crop recommendation, Agriculture AI, Fertilizer suggestion, Plant disease prediction, Precision farming, AgroTech, Machine Learning">
+  <meta name="theme-color" content="#091a13">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+  <!-- Fonts & Main Design System -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <!-- State & City Database -->
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="vanaspati-nav">
+    <div class="nav-container">
+      <a href="{{ url_for('home') }}" class="brand-wrapper" aria-label="Vanaspati.AI Home">
+        <div class="brand-icon-box">🌱</div>
+        <div class="brand-text">
+          <span class="brand-name">Vanaspati<span>AI</span></span>
+          <span class="brand-tagline">Precision Agronomy Intelligence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-desktop">
+          <li>
+            <a href="{{ url_for('home') }}" class="nav-link-item {% if request.endpoint == 'home' %}active{% endif %}">
+              <span>🏠</span> Home
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('crop_recommend') }}" class="nav-link-item {% if 'crop' in request.endpoint %}active{% endif %}">
+              <span>🌾</span> Crop Advisor
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('fertilizer_recommendation') }}" class="nav-link-item {% if 'fert' in request.endpoint %}active{% endif %}">
+              <span>🧪</span> Fertilizer Doctor
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('disease_prediction') }}" class="nav-link-item {% if 'disease' in request.endpoint %}active{% endif %}">
+              <span>🔬</span> Leaf Scanner
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('chat_view') }}" class="nav-link-item {% if 'chat' in request.endpoint %}active{% endif %}">
+              <span>💬</span> AI Consultant
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('about_view') }}" class="nav-link-item {% if 'about' in request.endpoint %}active{% endif %}">
+              <span>📖</span> About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer" id="navMobileDrawer">
+      <a href="{{ url_for('home') }}" class="nav-link-item {% if request.endpoint == 'home' %}active{% endif %}">
+        <span>🏠</span> Home
+      </a>
+      <a href="{{ url_for('crop_recommend') }}" class="nav-link-item {% if 'crop' in request.endpoint %}active{% endif %}">
+        <span>🌾</span> Crop Recommendation
+      </a>
+      <a href="{{ url_for('fertilizer_recommendation') }}" class="nav-link-item {% if 'fert' in request.endpoint %}active{% endif %}">
+        <span>🧪</span> Fertilizer Suggestion
+      </a>
+      <a href="{{ url_for('disease_prediction') }}" class="nav-link-item {% if 'disease' in request.endpoint %}active{% endif %}">
+        <span>🔬</span> Plant Disease Scanner
+      </a>
+      <a href="{{ url_for('chat_view') }}" class="nav-link-item {% if 'chat' in request.endpoint %}active{% endif %}">
+        <span>💬</span> AI Plant Consultant
+      </a>
+      <a href="{{ url_for('about_view') }}" class="nav-link-item {% if 'about' in request.endpoint %}active{% endif %}">
+        <span>📖</span> About Vanaspati.AI
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Body Content -->
+  <main class="main-wrapper">
+    {% block body %}{% endblock %}
+  </main>
+
+  <!-- Floating Scroll To Top -->
+  <button class="btn-back-to-top" id="btnBackToTop" title="Scroll to top" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <!-- Comprehensive AgroTech Footer -->
+  <footer class="vanaspati-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Vanaspati<span>AI</span></h3>
+        <p>
+          Next-generation environmental intelligence helping farmers make scientific, data-backed decisions.
+          Harnessing Machine Learning, Deep Convolutional Networks, and Real-time Meteorology to optimize harvests and secure food sustainability.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>AI Advisors</h4>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('crop_recommend') }}">🌾 Crop Suitability Model</a></li>
+          <li><a href="{{ url_for('fertilizer_recommendation') }}">🧪 Soil Nutrient Balancer</a></li>
+          <li><a href="{{ url_for('disease_prediction') }}">🔬 Deep Leaf Diagnostics</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Agronomy Stack</h4>
+        <ul class="footer-links">
+          <li><a href="#!">RandomForest Classifier (99.5%)</a></li>
+          <li><a href="#!">ResNet9 Residual CNN</a></li>
+          <li><a href="#!">OpenWeatherMap Agro-API</a></li>
+          <li><a href="#!">ICAR & FAO Soil Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Vanaspati.AI Platform. Designed for modern farmers and agricultural research.</p>
+      <p>Precision Agriculture &bull; Sustainable Yields &bull; Environmental Intelligence</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Client UX Script -->
+  <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>

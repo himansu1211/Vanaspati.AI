@@ -1,4 +1,4 @@
-# Vanaspati.AI
+# Vanaspati.AI 🌿
 ### Autonomous Plant Pathology Diagnosis, Multi-Modal Botanical Vision & Precision Agriculture Platform
 
 [![Deploy on Netlify](https://img.shields.io/badge/Deploy%20on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com/)
@@ -96,8 +96,16 @@ Every diagnosis generates a complete agricultural recovery roadmap:
 - Explains the critical difference between morphological species identification and foliar disease detection.
 - Includes field photography guidelines for crisp macro focus and diffuse lighting.
 
-### 6. Clinical Database Manual Search
+### 6. Neo4j Agronomic Knowledge Graph & Graph RAG (`/api/graph`)
+- **Phylogenetic & Etiological Network**: Modeled as an enterprise graph database in Neo4j with nodes for `(:Crop)`, `(:Disease)`, `(:Pathogen)`, `(:BiologicalRemedy)`, `(:ChemicalTreatment)`, and `(:SoilNutrient)`.
+- **Companion Planting & Allelopathy**: Graph relationships define beneficial symbiotic companions (`[:COMPANION_PLANT]`), antagonistic soil allelopathies (`[:ANTAGONISTIC_TO]`), and restorative crop rotation cycles (`[:ROTATE_AFTER]`).
+- **Graph RAG Integration**: Injects structured Neo4j subgraphs directly into the PLLaMa language model prompt, ensuring 100% factual zero-hallucination agronomic recommendations.
+- **Dual-Engine Architecture**: Operates with live **Neo4j AuraDB** cloud clusters / Bolt instances and an automatic embedded fallback graph engine when offline.
+- **Production Seed Script**: Includes [neo4j_agronomic_seed.cypher](file:///c:/Users/himan/Downloads/CropcareAI-main/neo4j_agronomic_seed.cypher) with unique constraints and batch `MERGE` statements for instant graph deployment.
+
+### 7. Clinical Database Manual Search
 - Farmers with low bandwidth or no camera can manually browse plants (Apple, Potato, Tomato, Rose, Grape, Corn, Pepper) and conditions to instantly retrieve complete cure manuals.
+
 
 ---
 

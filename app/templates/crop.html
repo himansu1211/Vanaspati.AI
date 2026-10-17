@@ -1,0 +1,192 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="form-studio-wrapper">
+    <div class="form-card">
+      <div class="form-header-area">
+        <div class="form-title-group">
+          <h2>🌾 Crop Recommendation Studio</h2>
+          <p>Provide your soil nutrient readings and local district to determine the optimal crop for your land.</p>
+        </div>
+        <button type="button" class="btn-sm-sample" id="btnQuickFillCrop" title="Fill sample soil values for quick testing">
+          ✨ Quick Fill Sample
+        </button>
+      </div>
+
+      <form method="POST" action="{{ url_for('crop_prediction') }}">
+        <div class="form-grid-2col">
+          <!-- Nitrogen -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Nitrogen" class="field-label">
+                <span>🌱</span> Nitrogen (N)
+              </label>
+              <span class="field-hint-badge">0 – 140 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Nitrogen"
+                name="nitrogen"
+                placeholder="e.g. 90"
+                min="0"
+                max="200"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Phosphorous -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Phosphorous" class="field-label">
+                <span>⚡</span> Phosphorous (P)
+              </label>
+              <span class="field-hint-badge">5 – 145 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Phosphorous"
+                name="phosphorous"
+                placeholder="e.g. 42"
+                min="0"
+                max="200"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Potassium -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Pottasium" class="field-label">
+                <span>🛡️</span> Potassium (K)
+              </label>
+              <span class="field-hint-badge">5 – 205 mg/kg</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">🧪</span>
+              <input
+                type="number"
+                class="form-control-agro"
+                id="Pottasium"
+                name="pottasium"
+                placeholder="e.g. 43"
+                min="0"
+                max="300"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- pH Level -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="ph" class="field-label">
+                <span>⚖️</span> Soil pH Level
+              </label>
+              <span class="field-hint-badge">3.5 – 9.0</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">📊</span>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control-agro"
+                id="ph"
+                name="ph"
+                placeholder="e.g. 6.5"
+                min="0"
+                max="14"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Rainfall -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="Rainfall" class="field-label">
+                <span>🌧️</span> Annual Rainfall
+              </label>
+              <span class="field-hint-badge">in mm</span>
+            </div>
+            <div class="input-container">
+              <span class="input-icon-left">💧</span>
+              <input
+                type="number"
+                step="0.1"
+                class="form-control-agro"
+                id="Rainfall"
+                name="rainfall"
+                placeholder="e.g. 202.9"
+                min="0"
+                max="1000"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- State Selection -->
+          <div class="form-field">
+            <div class="form-label-row">
+              <label for="sts" class="field-label">
+                <span>📍</span> State
+              </label>
+              <span class="field-hint-badge">India</span>
+            </div>
+            <div class="input-container select-wrapper">
+              <span class="input-icon-left">🗺️</span>
+              <select
+                onchange="print_city('state', this.selectedIndex);"
+                id="sts"
+                name="stt"
+                class="form-control-agro"
+                required
+              ></select>
+            </div>
+          </div>
+
+          <!-- City Selection -->
+          <div class="form-field form-group-full">
+            <div class="form-label-row">
+              <label for="state" class="field-label">
+                <span>🏙️</span> City / District (for live weather API)
+              </label>
+              <span class="field-hint-badge">Weather Sync</span>
+            </div>
+            <div class="input-container select-wrapper">
+              <span class="input-icon-left">🌤️</span>
+              <select
+                id="state"
+                name="city"
+                class="form-control-agro"
+                required
+              ></select>
+            </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          print_state("sts");
+        </script>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-vanaspati btn-primary-agro btn-form-submit">
+            <span>✨</span> Calculate Recommended Crop
+          </button>
+          <span class="form-privacy-note">
+            Powered by 99.5% accurate Random Forest model with real-time OpenWeather telemetry.
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

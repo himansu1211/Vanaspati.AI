@@ -1,0 +1,158 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-glow-orb hero-glow-1"></div>
+  <div class="hero-glow-orb hero-glow-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>🌾</span> Precision Agro-Intelligence 2.0
+    </div>
+
+    <h1 class="hero-title">
+      Smarter Farming Decisions.<br>
+      <span class="gradient-text">Maximized Harvest Yields.</span>
+    </h1>
+
+    <p class="hero-description">
+      Empower your farmland with predictive artificial intelligence. Analyze soil chemistry, live meteorological data,
+      and leaf pathology in seconds to cultivate optimal crops, balance fertilizers, and prevent disease outbreaks.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="{{ url_for('crop_recommend') }}" class="btn-vanaspati btn-primary-agro">
+        <span>🌾</span> Recommend Ideal Crop
+      </a>
+      <a href="{{ url_for('fertilizer_recommendation') }}" class="btn-vanaspati btn-amber-agro">
+        <span>🧪</span> Balance Soil Fertilizer
+      </a>
+      <a href="{{ url_for('disease_prediction') }}" class="btn-vanaspati btn-secondary-agro">
+        <span>🔬</span> Scan Leaf Pathology
+      </a>
+    </div>
+
+    <!-- Live Performance Metrics -->
+    <div class="hero-stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">99.5<span>%</span></div>
+        <div class="stat-label">Model Accuracy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">22<span>+</span></div>
+        <div class="stat-label">Supported Crops</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">38</div>
+        <div class="stat-label">Disease Pathologies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">&lt; 1<span>s</span></div>
+        <div class="stat-label">Real-Time Inference</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core AI Advisory Tools -->
+<section class="content-container">
+  <div class="section-header">
+    <span class="section-tag">AI Agronomy Engines</span>
+    <h2 class="section-title">Everything You Need for a Bountiful Harvest</h2>
+    <p class="section-subtitle">
+      Three scientific agricultural decision support tools engineered to guide you through sowing, nutrition, and crop protection.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Tool 1: Crop Advisor -->
+    <div class="service-card">
+      <div class="service-icon-wrapper icon-crop">🌾</div>
+      <h3 class="service-title">Crop Recommendation</h3>
+      <p class="service-desc">
+        Eliminate guesswork from sowing. Feed in your soil's Nitrogen, Phosphorus, Potassium, pH, rainfall, and local city.
+        Our model fuses live atmospheric temperature and humidity to pinpoint the single highest-yielding crop for your specific microclimate.
+      </p>
+      <div class="service-meta-tags">
+        <span class="meta-pill">Random Forest</span>
+        <span class="meta-pill">Weather API Sync</span>
+        <span class="meta-pill">Soil Chemistry</span>
+      </div>
+      <a href="{{ url_for('crop_recommend') }}" class="btn-vanaspati btn-primary-agro service-btn">
+        Launch Crop Advisor &rarr;
+      </a>
+    </div>
+
+    <!-- Tool 2: Fertilizer Advisory -->
+    <div class="service-card">
+      <div class="service-icon-wrapper icon-fertilizer">🧪</div>
+      <h3 class="service-title">Fertilizer Doctor</h3>
+      <p class="service-desc">
+        Over-fertilizing ruins soil and burns money; under-fertilizing stunts yield. Enter your current NPK ratio and desired crop.
+        The algorithm determines critical deficiencies or excesses and prescribes tailored organic amendments and commercial NPK ratios.
+      </p>
+      <div class="service-meta-tags">
+        <span class="meta-pill">NPK Ratio Balancing</span>
+        <span class="meta-pill">Organic Mulch Guide</span>
+        <span class="meta-pill">Deficiency Diagnostics</span>
+      </div>
+      <a href="{{ url_for('fertilizer_recommendation') }}" class="btn-vanaspati btn-amber-agro service-btn">
+        Optimize Fertilizer &rarr;
+      </a>
+    </div>
+
+    <!-- Tool 3: Disease Detection -->
+    <div class="service-card">
+      <div class="service-icon-wrapper icon-disease">🔬</div>
+      <h3 class="service-title">Plant Disease Scanner</h3>
+      <p class="service-desc">
+        Take a photo of any leaf showing spots, lesions, or discoloration. Our Deep Convolutional Network classifies diseases across
+        fruits and vegetables with 99.2% precision, providing instant curative actions, chemical fungicides, and cultural practices.
+      </p>
+      <div class="service-meta-tags">
+        <span class="meta-pill">ResNet-9 Architecture</span>
+        <span class="meta-pill">38 Pathogen Classes</span>
+        <span class="meta-pill">Immediate Cures</span>
+      </div>
+      <a href="{{ url_for('disease_prediction') }}" class="btn-vanaspati btn-secondary-agro service-btn" style="background: var(--forest-card); color: #fff;">
+        Scan Diseased Leaf &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- How It Works Section -->
+  <div class="section-header" style="margin-top: 3rem;">
+    <span class="section-tag">Scientific Methodology</span>
+    <h2 class="section-title">How Vanaspati.AI Protects Your Fields</h2>
+    <p class="section-subtitle">A seamless 4-step workflow connecting field measurements with deep machine learning.</p>
+  </div>
+
+  <div class="diagnostic-grid" style="margin-bottom: 2rem;">
+    <div class="diag-stat-card">
+      <div class="diag-stat-icon">1️⃣</div>
+      <div class="diag-stat-label">Step One</div>
+      <div class="diag-stat-value" style="font-size: 1.15rem; margin-top: 0.35rem;">Sample Soil Data</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Input NPK nutrient levels, soil pH, rainfall, and farm location.</p>
+    </div>
+    <div class="diag-stat-card">
+      <div class="diag-stat-icon">2️⃣</div>
+      <div class="diag-stat-label">Step Two</div>
+      <div class="diag-stat-value" style="font-size: 1.15rem; margin-top: 0.35rem;">Sync Meteorology</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Live temperature & atmospheric humidity are pulled via API for your district.</p>
+    </div>
+    <div class="diag-stat-card">
+      <div class="diag-stat-icon">3️⃣</div>
+      <div class="diag-stat-label">Step Three</div>
+      <div class="diag-stat-value" style="font-size: 1.15rem; margin-top: 0.35rem;">Machine Learning</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Ensemble RandomForest & ResNet9 evaluate 22 crop curves and 38 pathology patterns.</p>
+    </div>
+    <div class="diag-stat-card">
+      <div class="diag-stat-icon">4️⃣</div>
+      <div class="diag-stat-label">Step Four</div>
+      <div class="diag-stat-value" style="font-size: 1.15rem; margin-top: 0.35rem;">Actionable Advice</div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Receive clear, actionable guides on sowing, fertilizer doses, and disease treatments.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

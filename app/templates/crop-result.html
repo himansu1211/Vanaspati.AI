@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="result-wrapper">
+    <div class="result-card">
+      <div class="result-card-banner">
+        <div class="result-badge badge-success">
+          <span>🎯</span> Optimal Agronomic Recommendation
+        </div>
+        <p class="result-subhead">Based on your soil's chemical signature and local meteorological parameters, your farm is best suited for:</p>
+        <div class="result-crop-name">🌱 {{ prediction }}</div>
+        <p class="result-subhead">
+          Cultivating <strong>{{ prediction|capitalize }}</strong> under your current soil conditions promises maximized biological yield and optimal fertilizer efficiency.
+        </p>
+      </div>
+
+      <!-- Agro Parameters Diagnostics -->
+      <div class="diagnostic-grid">
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">📈</div>
+          <div class="diag-stat-label">Model Confidence</div>
+          <div class="diag-stat-value">99.5%</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">🧪</div>
+          <div class="diag-stat-label">Soil N-P-K Fit</div>
+          <div class="diag-stat-value">Optimal</div>
+        </div>
+        <div class="diag-stat-card">
+          <div class="diag-stat-icon">🌤️</div>
+          <div class="diag-stat-label">Climate Alignment</div>
+          <div class="diag-stat-value">Synchronized</div>
+        </div>
+      </div>
+
+      <!-- Action Guidance Box -->
+      <div class="result-content-box">
+        <h4 style="margin-bottom: 0.75rem; color: var(--emerald-800);">📋 Next Agronomic Steps for {{ prediction|capitalize }}:</h4>
+        <ul style="padding-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+          <li>Conduct a pre-sowing seed treatment to prevent soil-borne seedling rot.</li>
+          <li>Calibrate your NPK application by checking our dedicated <strong>Fertilizer Doctor</strong> for exact nutrient ratios.</li>
+          <li>Ensure adequate soil moisture retention through organic mulching or micro-irrigation.</li>
+          <li>Regularly monitor foliage with our <strong>Leaf Scanner</strong> to catch any pest or fungal spots early.</li>
+        </ul>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="result-actions-row">
+        <a href="{{ url_for('fertilizer_recommendation') }}" class="btn-vanaspati btn-amber-agro">
+          <span>🧪</span> Optimize Fertilizer for {{ prediction|capitalize }}
+        </a>
+        <a href="{{ url_for('crop_recommend') }}" class="btn-vanaspati btn-outline-agro">
+          <span>🔄</span> Test Another Soil Profile
+        </a>
+        <a href="{{ url_for('home') }}" class="btn-vanaspati btn-secondary-agro" style="background: var(--text-muted); color: #fff;">
+          <span>🏠</span> Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

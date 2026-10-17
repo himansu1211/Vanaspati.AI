@@ -1,0 +1,163 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="form-studio-wrapper" style="max-width: 900px; margin: 0 auto;">
+    
+    <div class="form-card" style="padding: 2rem;">
+      
+      <!-- Header Area -->
+      <div class="form-header-area" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 1.25rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.35rem;">
+              <span style="font-size: 1.8rem;">🤖</span>
+              <h2 style="font-size: 1.6rem; color: var(--text-primary); margin: 0;">
+                AI Plant Science Consultant
+              </h2>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
+              Scientific botanical guidance grounded in <strong>PLLaMa (arXiv:2401.01600v1)</strong>, 1.67M papers, and <strong>Koppert Biological Standards</strong>.
+            </p>
+          </div>
+          <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: #e8f5e9; border: 1px solid var(--emerald-600); color: #1b5e20; padding: 0.4rem 0.85rem; border-radius: 9999px; font-size: 0.82rem; font-weight: 700;">
+            <span>🟢</span> Active Model: PLLaMa-13B / TinyLlama Edge
+          </div>
+        </div>
+      </div>
+
+      <!-- Specimen Context Selectors (Optional) -->
+      <div style="background: var(--forest-surface, #f8fafc); border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.25rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <div style="flex: 1; min-width: 220px;">
+            <label for="assistantPlantInput" style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+              🌿 Crop / Plant Under Care (Optional):
+            </label>
+            <input
+              type="text"
+              id="assistantPlantInput"
+              placeholder="e.g. Spinach, Tomato, Bitter Gourd, Apple Tree..."
+              style="width: 100%; padding: 0.6rem 0.85rem; border-radius: 8px; border: 1.5px solid #cbd5e1; background: #fff; font-size: 0.9rem;"
+            />
+          </div>
+          <div style="flex: 1; min-width: 220px;">
+            <label for="assistantConditionInput" style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">
+              🔬 Suspected Issue / Condition (Optional):
+            </label>
+            <input
+              type="text"
+              id="assistantConditionInput"
+              placeholder="e.g. Early Blight, Downy Mildew, Yellow Leaves..."
+              style="width: 100%; padding: 0.6rem 0.85rem; border-radius: 8px; border: 1.5px solid #cbd5e1; background: #fff; font-size: 0.9rem;"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Consultation Prompts -->
+      <div style="margin-bottom: 1.25rem;">
+        <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: block; margin-bottom: 0.6rem;">
+          ⚡ Quick Instant Prompts (Click to Consult):
+        </span>
+        <div class="assistant-chips-grid" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          <button type="button" class="assistant-quick-chip" data-prompt="💧 How often should I water my plants?">
+            💧 Watering Frequency
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="☀️ Sunlight and temperature requirements for healthy growth">
+            ☀️ Sunlight & Lux
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🧪 Optimal N-P-K fertilizer ratio for vegetable plants">
+            🧪 N-P-K Nutrition
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🩺 How do I treat and cure Early Blight or Late Blight?">
+            🩺 Blight Treatment
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🌿 What are Koppert biological control solutions for pest and fungal management?">
+            🌿 Koppert Biocontrol
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🥬 How to grow and care for Spinach, Malabar Spinach, and leafy greens?">
+            🥬 Spinach Care
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🥒 How to trellis and manage powdery mildew on Bitter Gourd and cucurbits?">
+            🥒 Gourd & Squash Care
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🍅 How do I cure Blossom End Rot and leaf curl on tomatoes?">
+            🍅 Tomato Protocols
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🐾 Which common garden and house plants are toxic or safe for pets?">
+            🐾 Pet Safety
+          </button>
+          <button type="button" class="assistant-quick-chip" data-prompt="🧬 Tell me about PLLaMa (arXiv:2401.01600v1) and its plant science training.">
+            🧬 About PLLaMa Model
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Dialogue Stream Box -->
+      <div id="chatDialogueStream" style="
+        min-height: 380px;
+        max-height: 520px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        margin-bottom: 1.25rem;
+      ">
+        <!-- Initial Assistant Message -->
+        <div class="chat-msg-row assistant-msg" style="align-self: flex-start; max-width: 88%;">
+          <div style="display: flex; gap: 0.65rem; align-items: flex-start;">
+            <div style="font-size: 1.4rem; background: #e8f5e9; border: 1px solid var(--emerald-600); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">🤖</div>
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px 12px 12px 2px; padding: 1rem 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+              <div style="font-size: 0.75rem; color: #166534; font-weight: 700; text-transform: uppercase; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.35rem;">
+                <span>🔬</span> Welcome to Vanaspati.AI Plant Science Consultant
+              </div>
+              <div style="font-size: 0.95rem; line-height: 1.7; color: var(--text-primary);">
+                Hello! I am your AI Agronomy & Plant Science Consultant, grounded in <strong>PLLaMa (arXiv:2401.01600v1)</strong>, 1.67M peer-reviewed plant science papers, and <strong>Koppert Biological Systems</strong>.
+                <br><br>
+                Ask me anything about watering schedules, sunlight lux, N-P-K fertilizer formulations, organic biocontrols, or treating foliar diseases!
+              </div>
+              <div style="font-size: 0.75rem; color: #64748b; margin-top: 0.6rem; border-top: 1px dashed #e2e8f0; padding-top: 0.4rem;">
+                📚 Source: PLLaMa Academic Corpus & Koppert Biological Standards
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Form Area -->
+      <form id="assistantChatForm" style="display: flex; gap: 0.75rem;">
+        <input
+          type="text"
+          id="assistantQueryInput"
+          placeholder="Ask a question about plant care, watering, fertilizers, or diseases..."
+          style="
+            flex: 1;
+            padding: 0.85rem 1.25rem;
+            border-radius: 10px;
+            border: 1.5px solid #cbd5e1;
+            font-size: 0.98rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+            background: #ffffff;
+          "
+          required
+        />
+        <button
+          type="submit"
+          id="btnSendQuery"
+          class="btn-vanaspati btn-primary-agro"
+          style="padding: 0.85rem 1.75rem; white-space: nowrap; font-weight: 700;"
+        >
+          <span>🚀</span> Ask AI
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content-container">
+  <div class="result-wrapper">
+    <div class="result-card" style="text-align: center;">
+      <div class="result-badge badge-warning">
+        <span>⚠️</span> Weather Telemetry Notice
+      </div>
+      <h2 style="font-size: clamp(1.8rem, 4vw, 2.3rem); margin-bottom: 0.75rem; color: var(--text-primary);">
+        Could Not Fetch Weather For Selected City
+      </h2>
+      <p class="result-subhead" style="margin-bottom: 2rem;">
+        The OpenWeatherMap API could not locate meteorological telemetry for the selected remote town or the service is temporarily unreachable.
+      </p>
+
+      <div class="result-content-box" style="text-align: left; max-width: 600px; margin: 0 auto 2.5rem;">
+        <h4 style="margin-bottom: 0.5rem; color: var(--emerald-800);">💡 Helpful Suggestions:</h4>
+        <ul style="padding-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+          <li>Select a major district headquarters or nearby city (e.g. <em>Pune, Nagpur, Bangalore, Ludhiana, Jaipur, Ahmedabad</em>).</li>
+          <li>Or click the <strong>✨ Quick Fill Sample</strong> button on the Crop form to run an instant demonstration.</li>
+          <li>Ensure your internet connection is active.</li>
+        </ul>
+      </div>
+
+      <div class="result-actions-row">
+        <a href="{{ url_for('crop_recommend') }}" class="btn-vanaspati btn-primary-agro">
+          <span>🔄</span> Try Another City / Crop Form
+        </a>
+        <a href="{{ url_for('home') }}" class="btn-vanaspati btn-secondary-agro" style="background: var(--text-muted); color: #fff;">
+          <span>🏠</span> Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
