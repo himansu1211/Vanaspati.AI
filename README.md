@@ -1,4 +1,4 @@
-# Vanaspati.AI 🌿
+# Vanaspati.AI
 ### Autonomous Plant Pathology Diagnosis, Multi-Modal Botanical Vision & Neo4j Agronomic Knowledge Graph Platform
 
 [![Live Site](https://img.shields.io/badge/Live_Demo-vanaspatiai.netlify.app-00C7B7?logo=netlify&logoColor=white)](https://vanaspatiai.netlify.app/)
