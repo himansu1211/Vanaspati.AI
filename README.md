@@ -1,4 +1,4 @@
-# Vanaspati.AI (CropcareAI) 🌿
+# Vanaspati.AI
 ### Autonomous Plant Pathology Diagnosis, Multi-Modal Botanical Vision & Precision Agriculture Platform
 
 [![Deploy on Netlify](https://img.shields.io/badge/Deploy%20on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://www.netlify.com/)
